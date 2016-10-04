@@ -23,9 +23,15 @@ void show_pointer(void *x){
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
 
+void inplace_swap(int *x, int *y){
+  *y = *x ^ *y;
+  *x = *x ^ *y;
+  *y = *x ^ *y;
+}
+
 int main()
 {
-	printf("Hello, world\n");
+    printf("Hello, world\n");
     int i = 200 * 300 * 400 * 500;
     printf("i is %i\n",i);
     double d =  4 * 500;
@@ -36,6 +42,12 @@ int main()
     show_pointer(&ival);
     const char *s = "abcdef";
     show_bytes((byte_pointer) s, strlen(s));
-    
+
+    int x = 100;
+    int y = 200;
+    inplace_swap(&x, &y);
+    printf("x: %d\n", x);
+    printf("y: %d\n", y);
+    printf("x^x^y: %d\n", x^x^y);
     return 0;
 }
