@@ -3,7 +3,11 @@
 *.ko
 *.obj
 *.elf
+# misc files
 .DS_Store
+*.*~
+\#*.*\#
+
 # Precompiled Headers
 *.gch
 *.pch
