@@ -49,5 +49,9 @@ int main()
     printf("x: %d\n", x);
     printf("y: %d\n", y);
     printf("x^x^y: %d\n", x^x^y);
+
+    int a = 5;
+    int b = 6;
+    printf("a-b: %u\n", (a-b));
     return 0;
 }
