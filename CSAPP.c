@@ -53,5 +53,17 @@ int main()
     int a = 5;
     int b = 6;
     printf("a-b: %u\n", (a-b));
+    //int c = (int) (1 * pow(2, 31));
+    int c = -2147483648;
+    c = -c;
+    // ?? Why doesn't this overflow
+    printf("-Int_Min is %d\n", 2147473648);
     return 0;
 }
+
+int tmult_ok(int x, int y)
+{
+  int p = x * y;
+  return !x || p/x == y;
+}
+
