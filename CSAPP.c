@@ -8,6 +8,8 @@
 typedef unsigned char *byte_pointer;
 //typedef double *byte_pointer;
 
+void test_exchange();
+
 void show_bytes(byte_pointer start, int len) {
     int i;
     for (i = 0; i < len; i++)
@@ -58,6 +60,8 @@ int main()
     c = -c;
     // ?? Why doesn't this overflow
     printf("-Int_Min is %d\n", 2147473648);
+
+    test_exchange();
     return 0;
 }
 
@@ -67,3 +71,16 @@ int tmult_ok(int x, int y)
   return !x || p/x == y;
 }
 
+int exchange(int *xp, int y)
+{
+  int x = *xp;
+  *xp = y;
+  return x;
+}
+
+void test_exchange()
+{
+  int a = 4;
+  int b = exchange(&a, 3);
+  printf("a = %d, b = %d\n", a, b); // 3, 4
+}
