@@ -1,0 +1,32 @@
+gdb -tui bomb
+list bomb.c:50 // go to Line 50
+
+break phase_1
+disas phase_1
+break strings_not_equal
+disas strings_not_equal
+break *0x401342
+run
+x/w $rsi
+x/s $rdi
+"Border relations with Canada have never been better."
+
+phase_2
+$rax, $r10, $rdi in read_six_numbers
+1 2 4 8 16 32
+
+phase_3
+3 256
+or 2 707
+1 311
+
+phase_4
+1 0
+
+phase_5
+ionefg
+key: maduierrsnfotvbyl
+
+phase_6
+6 digits
+i0 < 6
