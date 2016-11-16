@@ -29,4 +29,5 @@ key: maduierrsnfotvbyl
 
 phase_6
 6 digits
-i0 < 6
+unique
+
