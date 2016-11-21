@@ -84,3 +84,9 @@ void test_exchange()
   int b = exchange(&a, 3);
   printf("a = %d, b = %d\n", a, b); // 3, 4
 }
+
+int var_ele(int n, int A[n][n], int i, int j)
+{
+    return A[i][j];
+
+}

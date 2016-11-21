@@ -1,0 +1,65 @@
+/==================\
+| Student Mini-Bio |
+\==================/
+
+Submission Instructions:
+=======================
+  1)  Answer the questions below by editing this text document and then save it
+  2)  Find a recognizable photo of yourself, in JPEG and no larger than
+      600x600, and include it above your responses to the following questions.
+      - You can get a friend with a digital camera to take a nice "head shot" of you
+      - You can also take a photo using the camera on the lab computers
+  3)  Print this out and hand it to your TA in section	
+
+Name:		_____
+Login:		cs61c-__
+E-mail:		__@__
+Section:	1__
+
+
+Mini-Biography:
+==============
+Classes can sometimes feel so impersonal!  We created this mini-bio so we may get to know each other a little better. 
+This will be kept confidential amongst the staff, but you don't have to fill in anything you don't wish to.
+
+** The staff will answer them too, so how about you? **
+
+
+--> Where did you grow up? What was your academic path?
+(e.g. Did you live in the same town all your life or did you move around; and if so, where? Did you go to community college or another school before this one?)
+
+
+
+
+
+--> How much programming have you done (and what languages)?
+
+
+
+
+
+--> What are your hobbies?
+
+
+
+
+
+--> What are some of your talents and skills?
+
+
+
+
+
+--> Have you done anything remarkable? Has anything really memorable happened to you?
+(e.g. travel, meeting famous people, 15 min of fame, inventions, overcoming adversity, etc.)
+
+
+
+
+
+--> What commitments will be consuming your cycles this term?
+(e.g. classes, jobs, family, commutes, volunteering, sports, student groups, etc.)
+
+
+
+
