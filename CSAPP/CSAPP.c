@@ -33,6 +33,11 @@ void inplace_swap(int *x, int *y){
 
 int main()
 {
+    write(1, "hello, world\n", 13);
+
+    int pid = fork();
+    printf("pid, %d\n", pid);
+    
     printf("Hello, world\n");
     int i = 200 * 300 * 400 * 500;
     printf("i is %i\n",i);
