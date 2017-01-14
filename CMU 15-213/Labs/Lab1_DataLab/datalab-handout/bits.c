@@ -140,7 +140,7 @@ NOTES:
  *   Rating: 1
  */
 int bitOr(int x, int y) {
-  return 2;
+         return x | y;
 }
 /* 
  * specialBits - return bit pattern 0xffca3fff
@@ -149,12 +149,7 @@ int bitOr(int x, int y) {
  *   Rating: 1
  */
 int specialBits(void) {
-
-
-
-
-    return 2;
-
+    return 4291444735; 
 }
 //2
 /*
@@ -165,7 +160,7 @@ int specialBits(void) {
  *   Rating: 1
  */
 int isZero(int x) {
-  return 2;
+    return !(x ^ 0);
 }
 /* 
  * anyEvenBit - return 1 if any even-numbered bit in word set to 1
@@ -175,7 +170,8 @@ int isZero(int x) {
  *   Rating: 2
  */
 int anyEvenBit(int x) {
-  return 2;
+    int y = 0x55555555;
+    return !!(x & y);
 }
 /* 
  * negate - return -x 
@@ -185,7 +181,7 @@ int anyEvenBit(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+    return ~x + 1;
 }
 /* 
  * leastBitPos - return a mask that marks the position of the
@@ -196,7 +192,7 @@ int negate(int x) {
  *   Rating: 2 
  */
 int leastBitPos(int x) {
-  return 2;
+    return 2;
 }
 //3
 /* 
@@ -208,7 +204,7 @@ int leastBitPos(int x) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-  return 2;
+    return x << n;
 }
 /* 
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
