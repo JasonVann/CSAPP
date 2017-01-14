@@ -192,7 +192,7 @@ int negate(int x) {
  *   Rating: 2 
  */
 int leastBitPos(int x) {
-    return 2;
+    return x & (-x);
 }
 //3
 /* 
@@ -204,7 +204,8 @@ int leastBitPos(int x) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-    return x << n;
+    unsigned y = x;
+    return  (y >> (32 - n)) | y << n;
 }
 /* 
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
@@ -215,7 +216,24 @@ int rotateLeft(int x, int n) {
  *   Rating: 2
  */
 int divpwr2(int x, int n) {
-    return 2;
+    //unsigned y = x;
+    //int mask = 0x80000000;
+    int sign = x >> 31;
+    //int neg = (x + (1 << n) - 1) >> n;
+    //int pos = x >> n;
+
+    int mask = (1 << n) - 1;
+    int adj = sign & mask;
+    return (x + adj) >> n;
+    /*
+    if (sign)
+        return neg;
+    return pos;;
+    
+    return (((unsigned)x >> 31) && ((x + (1<<n)-1) >> n)) || x >> n;
+    //return (x >> n) | (x & 1);
+    //return ((x & mask) >> n) | (y >> n);
+    */
 }
 /* 
  * isLess - if x < y  then return 1, else return 0 
@@ -225,7 +243,7 @@ int divpwr2(int x, int n) {
  *   Rating: 3
  */
 int isLess(int x, int y) {
-  return 2;
+    return 2;
 }
 //4
 /*
