@@ -243,7 +243,12 @@ int divpwr2(int x, int n) {
  *   Rating: 3
  */
 int isLess(int x, int y) {
-    return 2;
+    int sign_x = (x >> 31) & 1;
+    int sign_y = (y >> 31) & 1;
+
+    int temp = (~x + y) >> 31;
+    
+    return (sign_x & !sign_y) | !(temp & 1) & (!(sign_y & !sign_x));
 }
 //4
 /*
@@ -255,7 +260,14 @@ int isLess(int x, int y) {
  *   Rating: 4
  */
 int isPower2(int x) {
-  return 2;
+    int mask = ~(x >> 31);
+    return !((!x) | (x & (x + mask)));
+        
+    /*
+    if (x <= 0)
+        return 0;       
+    return !(x&(x-1));
+    */
 }
 /*
  * bitReverse - Reverse bits in a 32-bit word
@@ -266,7 +278,16 @@ int isPower2(int x) {
  *   Rating: 4
  */
 int bitReverse(int x) {
-    return 2;
+    unsigned x1 = (unsigned) x;
+    x1 = (((x1 & 0xaaaaaaaa) >> 1) | ((x1 & 0x55555555) << 1));
+    x1 = (((x1 & 0xcccccccc) >> 2) | ((x1 & 0x33333333) << 2));
+    x1 = (((x1 & 0xf0f0f0f0) >> 4) | ((x1 & 0x0f0f0f0f) << 4));
+    x1 = (((x1 & 0xff00ff00) >> 8) | ((x1 & 0x00ff00ff) << 8));
+    return((x1 >> 16) | (x1 << 16));
+
+    // reverse bytes
+    return ((x>>24) & 0xff) | (((x>>16) & 0xff) << 8)
+        | (((x >> 8) & 0xff) << 16) | ((x & 0xff) << 24);
 }
 //float
 /* 
@@ -281,7 +302,10 @@ int bitReverse(int x) {
  *   Rating: 2
  */
 unsigned float_abs(unsigned uf) {
-  return 2;
+    unsigned r = uf & 0x7fffffff;
+    if(r > 0x7f800000) // min_NaN
+        return uf;
+    return r;
 }
 /* 
  * float_i2f - Return bit-level equivalent of expression (float) x
