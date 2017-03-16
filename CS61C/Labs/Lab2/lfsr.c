@@ -4,9 +4,17 @@
 #include <string.h>
 
 void lfsr_calculate(uint16_t *reg) {
+    /* YOUR CODE HERE */
 
-  /* YOUR CODE HERE */
+    uint16_t bit = 0;
+    uint16_t lfsr = *reg;
+    //bit  = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5) ) & 1;
+    //lfsr =  (lfsr >> 1) | (bit << 15);
 
+    bit = ((lfsr >> 15) ^ (lfsr >> 13) ^ (lfsr >> 12) ^ (lfsr >> 10)) & 1;
+    lfsr = (lfsr << 1) | bit;
+    *reg = lfsr;
+    
 }
 
 int main() {
